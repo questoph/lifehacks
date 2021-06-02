@@ -38,4 +38,4 @@ With this parameter you can specify the name to be added to all `from` messages 
 -z OR --zip
 ```
 
-If you set this parameter, the script will conpress the output files to a `.zip` archive.
+If you set this parameter, the script will compress the output files to a `.zip` archive.

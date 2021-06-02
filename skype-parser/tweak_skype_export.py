@@ -105,6 +105,7 @@ df.sort_values(by=['conversationid', 'id'], ascending=[True, True], inplace=True
 df.to_csv(args['output'] + '.csv', index=False)
 df.to_json(args['output'] + '.json', orient="index")
 
+# Zip to file if specified
 if args['zip']:
     # Write to zip and delete files
     archive = zipfile.ZipFile(args['output'] + '.zip', mode='w', compression=zipfile.ZIP_DEFLATED)
