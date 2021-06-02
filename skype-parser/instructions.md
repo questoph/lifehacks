@@ -1,6 +1,6 @@
 ## Tweak Skype 8 data export
 
-AS you might know, you can export your chat data from Skype 8. To do so, just log into your [Skype account](https://go.skype.com/export) and request the export file. You can download the fie directly from the page or wait for a notification in the app that the export is ready for download.
+As you might know, you can export your chat data from Skype 8. To do so, just log into your [Skype account](https://go.skype.com/export) and request the export file. You can download the fie directly from the page or wait for a notification in the app that the export is ready for download.
 
 Data export in Skype comes as a `.tar` file that contains a file named `messages.json`. So technically, your data is already in a decent format to work with. That is, until you actually open the file. Not only does the data contain a lot of useless markup language and tags, it also contains different versions of every edited message in the data.
 
