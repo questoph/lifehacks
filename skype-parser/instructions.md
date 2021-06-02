@@ -4,7 +4,7 @@ As you might know, you can export your chat data from Skype 8. To do so, just lo
 
 Data export in Skype comes as a `.tar` file that contains a file named `messages.json`. So technically, your data is already in a decent format to work with. That is, until you actually open the file. Not only does the data contain a lot of useless markup language and tags, it also contains different versions of every edited message in the data.
 
-To solve this, the script takes the `.tar` file, wranglesthe data in the `.json` archive and spits out clean backup files with your data in `.csv` and `.json` format.
+To solve this, the script takes the `.tar` file, wrangles the data in the `.json` archive and spits out clean backup files with your data in `.csv` and `.json` format.
 
 ### Usage
 

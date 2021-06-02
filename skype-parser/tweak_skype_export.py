@@ -78,7 +78,7 @@ for conv in msgs['conversations']:
                                           ('displayName', msg['displayName']), ('id', msg['id']),
                                           ('content', msg['content'])])
 
-# Collect keys for edited messages in list (the original version, not the edited)
+# Collect keys for edited messages in list (the original version, not the edited one)
 edited = set()
 for k, v in history.items():
     if '<e_m a=' in v['content']:
@@ -89,7 +89,8 @@ for k, v in history.items():
                 elif v['date'] > vau['date']:
                     edited.add(ka)
 
-# Filter history by removing the edited duplicate messages (plus clipping the edit tag info)
+# Filter history by removing the duplicates of edited messages
+# Clip the edit tag info along the way
 clean_hist = {}
 for k, v in history.items():
     if k in edited:
@@ -107,7 +108,6 @@ df.to_json(args['output'] + '.json', orient="index")
 
 # Zip to file if specified
 if args['zip']:
-    # Write to zip and delete files
     archive = zipfile.ZipFile(args['output'] + '.zip', mode='w', compression=zipfile.ZIP_DEFLATED)
     archive.write(args['output'] + '.csv')
     archive.write(args['output'] + '.json')
