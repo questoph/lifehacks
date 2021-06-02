@@ -1,4 +1,4 @@
-## Parse Skype 8 data export
+## Tweak Skype 8 data export
 
 AS you might know, you can export your chat data from Skype 8. To do so, just log into your [Skype account](https://go.skype.com/export) and request the export file. You can download the fie directly from the page or wait for a notification in the app that the export is ready for download.
 
@@ -8,10 +8,10 @@ To solve this, the script takes the `.tar` file, wrangles and cleans the data in
 
 ### Usage
 
-To parse your data, simply call the script in your shell. This will work out of the box with the export file and result in a `.zip` archive with the current date as a suffix.
+To tweak your data, simply call the script in your shell. This will work out of the box with the export file and result in a `.zip` archive with the current date as a suffix.
 
 ```Python
-python parse_skype_export.py
+python tweak_skype_export.py
 ```
 
 Additionally, you can specify up to 3 arguments:
