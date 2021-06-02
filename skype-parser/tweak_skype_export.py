@@ -20,9 +20,10 @@ dirname = os.path.dirname(__file__)
 
 # Set up argparse
 ap = argparse.ArgumentParser()
-ap.add_argument('-i', '--input', help='Infile name', nargs='?')
+ap.add_argument('-i', '--input', required=False, help='Infile name', nargs='?')
 ap.add_argument('-o', '--output', help='Outfile name', nargs='?', default=f'Skype_{datetime.date.today()}')
-ap.add_argument('-u', '--user', help='User handle', nargs='?')
+ap.add_argument('-u', '--user', required=False, help='User handle', nargs='?')
+ap.add_argument('-z', '--zip', required=False, help='Zip files', action='store_true')
 
 args = vars(ap.parse_args())
 
@@ -104,10 +105,11 @@ df.sort_values(by=['conversationid', 'id'], ascending=[True, True], inplace=True
 df.to_csv(args['output'] + '.csv', index=False)
 df.to_json(args['output'] + '.json', orient="index")
 
-# Write to zip and delete files
-archive = zipfile.ZipFile(args['output'] + '.zip', mode='w', compression=zipfile.ZIP_DEFLATED)
-archive.write(args['output'] + '.csv')
-archive.write(args['output'] + '.json')
-archive.close()
-os.remove(args['output'] + '.json')
-os.remove(args['output'] + '.csv')
+if args['zip']:
+    # Write to zip and delete files
+    archive = zipfile.ZipFile(args['output'] + '.zip', mode='w', compression=zipfile.ZIP_DEFLATED)
+    archive.write(args['output'] + '.csv')
+    archive.write(args['output'] + '.json')
+    archive.close()
+    os.remove(args['output'] + '.json')
+    os.remove(args['output'] + '.csv')
