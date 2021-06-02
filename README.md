@@ -4,4 +4,4 @@ This repo contains simple helper scripts for boring or arduous tasks I come acro
 
 ### Available scripts
 
-- **Parse Skype 8 data export**: Takes the not so optimal export archive offered by Microsoft and transforms it into something useful
+- **skype_parser**: Tweaks the not so optimal export archive for Skype chat data delivered by Microsoft and transforms it into something useful
