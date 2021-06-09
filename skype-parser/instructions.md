@@ -14,13 +14,13 @@ To tweak your data, simply call the script in your shell.
 python tweak_skype_export.py
 ```
 
-Additionally, you can specify up to 4 arguments:
+Additionally, you can specify up to 4 optional arguments:
 
 ```Python
 -i OR --input name_or_path_to_tar_file
 ```
 
-With this parameter you can specify the name or location of your export file. Currently the script expects the file to have the original name, though, that is, `8_USERNAME_export.tar`.
+With this parameter you can specify the name or location of your export file. Currently the script expects the file to have the original name, though, that is, `8_USERNAME_export.tar`. If not specified, the script looks for `.tar` files in the current directory and takes the first one it finds as input file.
 
 ```Python
 -o OR --output name_of_output_file
