@@ -12,8 +12,8 @@ To reorder the notes in your text, simply call the script in your shell.
 python write_Deckset_textbundle.py input_file asset_folder output_file
 ```
 
-It takes three parameters:
+It takes up to three arguments:
 
-- the name of the input file (can be `.txt` or `.md`)
-- the name of the assets folder (e.g., 'imgs')
-- the name of the output file including the `.textbundle` suffix (e.g., 'presentation.textbundle').
+- the name of the input file (can be `.txt` or `.md`); this argument is required
+- the name of the assets folder (e.g., 'imgs'); defaults to 'imgs' if not provided
+- the name of the output file including the `.textbundle` suffix (e.g., 'presentation.textbundle'); defaults to the name of the input_file if not provided.
