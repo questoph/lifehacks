@@ -7,6 +7,10 @@ import argparse
 
 
 def create_textbundle(input_file, assets_from, output_file):
+    # Change to directory of input_file
+    input_dir = os.path.dirname(os.path.abspath(input_file))
+    os.chdir(input_dir)
+
     # Create the textbundle directory
     textbundle_dir = output_file
     os.makedirs(textbundle_dir, exist_ok=True)
