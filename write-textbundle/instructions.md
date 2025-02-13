@@ -9,7 +9,7 @@ This is what this script does. It takes the name of your presentation file, your
 To reorder the notes in your text, simply call the script in your shell.
 
 ```Python
-python write_Deckset_textbundle.py input_file asset_folder_name output_file_name
+python write_Deckset_textbundle.py input_file asset_folder output_file
 ```
 
 It takes three parameters:

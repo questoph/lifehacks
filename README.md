@@ -6,3 +6,4 @@ This repo contains simple helper scripts for boring or arduous tasks I come acro
 
 - *skype-parser*: Tweaks the not so optimal export archive for Skype chat data delivered by Microsoft and transforms it into something useful
 - *sort-footnotes*: Orders the footnotes in a Markdown text file numerically
+- *write-textbundle*: Converts a Deckset presentation to `.textbundle`for use in Deckset for iOS
