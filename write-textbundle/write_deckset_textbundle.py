@@ -58,12 +58,20 @@ def create_textbundle(input_file, assets_from, output_file):
     with open(os.path.join(textbundle_dir, 'info.json'), 'w') as f:
         json.dump(info_json, f)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Create a Textbundle from a Markdown file and assets folder.')
     parser.add_argument('input_file', type=str, help='Path to the input Markdown file.')
-    parser.add_argument('assets_from', type=str, help='Path to the assets folder.')
-    parser.add_argument('output_file', type=str, help='Path to the output Textbundle directory.')
+    parser.add_argument('assets_from', nargs='?', default='imgs', type=str, help='Path to the assets folder: defaults to "imgs"')
+    parser.add_argument('output_file', nargs='?', type=str, help='Path to the output Textbundle directory: defaults to the name of the input file.')
 
     args = parser.parse_args()
+
+    # Set output_file to input_file name if not provided
+    if args.output_file is None:
+        args.output_file = args.input_file 
+
+    # Ensure the output_file has the .textbundle extension
+    if not args.output_file.endswith('.textbundle'):
+        args.output_file = os.path.splitext(args.output_file)[0] + '.textbundle'
+
     create_textbundle(args.input_file, args.assets_from, args.output_file)
